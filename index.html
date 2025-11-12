@@ -1,152 +1,194 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-  *{
-    margin:0;padding:0;box-sizing:border-box;
-    font-family:"Poppins",sans-serif;
-    scroll-behavior:smooth;
-  }
-  body{
-    background: linear-gradient(135deg, #1f1c2c, #928DAB);
-    color:#fff;
-  }
-  nav{
-    position:fixed;top:0;left:0;width:100%;
-    display:flex;justify-content:center;gap:50px;
-    padding:15px 0;backdrop-filter:blur(12px);
-    background:rgba(255,255,255,0.05);z-index:100;
-  }
-  nav a{
-    text-decoration:none;color:#eee;font-weight:400;
-    transition:.3s;
-  }
-  nav a:hover{color:#FFDF6C;}
-
-  header{
-    height:100vh;display:flex;flex-direction:column;
-    justify-content:center;align-items:center;text-align:center;
-    padding:20px;
-  }
-  header h1{
-    font-size:65px;font-weight:700;margin-bottom:10px;
-    animation:fadeDown 1.5s;
-  }
-  header p{
-    font-size:22px;opacity:.8;animation:fadeUp 2s;
-  }
-
-  .section{
-    max-width:1100px;margin:auto;padding:90px 20px;
-  }
-  .glass-box{
-    background:rgba(255,255,255,0.1);
-    padding:28px;border-radius:14px;margin-top:30px;
-    border:1px solid rgba(255,255,255,0.2);
-    backdrop-filter:blur(10px);
-    transform:translateY(40px);opacity:0;transition:.8s;
-  }
-  .glass-box.show{
-    transform:translateY(0);opacity:1;
-  }
-
-  .skills span{
-    display:inline-block;background:rgba(255,255,255,.15);
-    padding:10px 18px;border-radius:6px;margin:6px;
-    border:1px solid rgba(255,255,255,.25);
-    cursor:pointer;transition:.3s;
-  }
-  .skills span:hover{
-    background:#FFDF6C;color:#111;transform:scale(1.1);
-  }
-
-  .project:hover{
-    border-color:#FFDF6C;transform:scale(1.04);
-  }
-
-  @keyframes fadeDown{
-    from{opacity:0;transform:translateY(-20px)}
-    to{opacity:1;transform:translateY(0)}
-  }
-  @keyframes fadeUp{
-    from{opacity:0;transform:translateY(20px)}
-    to{opacity:1;transform:translateY(0)}
-  }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Modern Portfolio — Template</title>
+  <meta name="description" content="A modern, responsive portfolio template with a fresh color palette and small interactions." />
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <header class="container nav">
+    <div class="logo">
+      <div class="mark">KK</div>
+      <div class="word">
+        <div style="font-size:14px;color:var(--muted)">Portfolio</div>
+        <div style="font-weight:700">Kisan Kesarwani</div>
+      </div>
+    </div>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-<header>
-  <h1>Your Name</h1>
-  <p>Creative Web Developer & UI Designer</p>
-</header>
+    <div class="controls">
+      <button class="btn ghost" id="themeToggle" title="Toggle dark mode">Toggle</button>
+      <a class="btn primary" href="#projects">View Work</a>
+    </div>
+  </header>
 
-<section class="section" id="about">
-  <h2>About Me</h2>
-  <div class="glass-box">
-    I enjoy building smooth, modern, and visually appealing web interfaces.
-    My focus is on clarity, aesthetics and meaningful digital experiences.
-  </div>
-</section>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="intro">
+          <span class="eyebrow">Hello — I'm a developer</span>
+          <h1 class="reveal">I build engaging digital experiences and clean interfaces.</h1>
+          <p class="lead reveal">I’m Kisan — a front-end engineer and designer who blends performance-conscious code with thoughtful UI. I work on web apps, design systems, and playful micro-interactions.</p>
 
-<section class="section" id="skills">
-  <h2>Skills</h2>
-  <div class="glass-box skills">
-    <span>HTML</span><span>CSS</span><span>JavaScript</span>
-    <span>React</span><span>Tailwind</span><span>Node.js</span>
-  </div>
-</section>
+          <div class="hero-cta reveal">
+            <a class="btn primary" href="#projects">See Projects</a>
+            <a class="btn" href="#contact">Get in Touch</a>
+          </div>
 
-<section class="section" id="projects">
-  <h2>Projects</h2>
+          <div style="margin-top:18px" class="reveal">
+            <div class="tech-row">
+              <div class="tech">HTML</div>
+              <div class="tech">CSS</div>
+              <div class="tech">JavaScript</div>
+              <div class="tech">React</div>
+            </div>
+          </div>
+        </div>
 
-  <div class="glass-box project">
-    <h3>Modern Landing Page</h3>
-    <p>Smooth gradient UI with modern layout and responsive design.</p>
-  </div>
+        <aside class="hero-visual">
+          <div class="profile">
+            <div class="avatar">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="profile" />
+            </div>
+            <div style="text-align:center;margin-top:12px">
+              <div style="font-weight:700">Kisan Kesarwani</div>
+              <div style="color:var(--muted);font-size:13px">Frontend Engineer • UI Designer</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-  <div class="glass-box project">
-    <h3>Weather App UI</h3>
-    <p>Clean UI fetching live weather using API.</p>
-  </div>
+    <section id="about" class="about">
+      <div class="card">
+        <h3>About me</h3>
+        <div class="bio">
+          <p>I design and build web interfaces with attention to accessibility, performance, and delightful micro-interactions. I enjoy crafting systems that scale and feel lively.</p>
+          <p>I’m available for freelance work, mentorship, and consulting.</p>
 
-  <div class="glass-box project">
-    <h3>Personal Portfolio</h3>
-    <p>Fully animated, stylish portfolio website built from scratch.</p>
-  </div>
+          <div class="skills">
+            <div class="skill">Design Systems</div>
+            <div class="skill">Responsive UI</div>
+            <div class="skill">Animations</div>
+            <div class="skill">Performance</div>
+          </div>
+        </div>
+      </div>
 
-</section>
+      <div>
+        <div class="card">
+          <h4>Quick facts</h4>
+          <ul style="margin:12px 0 0;padding-left:18px;color:var(--muted)">
+            <li>Based in India</li>
+            <li>Available for remote work</li>
+            <li>Open to collaborations</li>
+          </ul>
+        </div>
 
-<section class="section" id="contact">
-  <h2>Contact</h2>
-  <div class="glass-box">
-    Email: yourmail@example.com
-  </div>
-</section>
+        <div class="card" style="margin-top:16px">
+          <h4>Contact</h4>
+          <p style="color:var(--muted);margin-bottom:10px">Say hi at <a href="mailto:hello@example.com">hello@example.com</a></p>
+          <div style="display:flex;gap:10px">
+            <a class="btn ghost" href="#">LinkedIn</a>
+            <a class="btn ghost" href="#">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script>
-  const reveal = ()=>{
-    document.querySelectorAll('.glass-box').forEach(el=>{
-      let rect = el.getBoundingClientRect().top;
-      if(rect < window.innerHeight - 60){
-        el.classList.add('show');
-      }
-    })
-  }
-  window.addEventListener('scroll', reveal);
-  reveal();
-</script>
+    <section id="projects" class="projects">
+      <h2>Selected projects</h2>
+      <div class="projects-grid">
+        <article class="project-card card reveal">
+          <div class="project-media">
+            <div style="font-weight:700">Project One</div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">Design System Explorer</div>
+            <p class="project-desc">A component library and playground for teams to iterate faster with tokens, docs, and live editing.</p>
+          </div>
+        </article>
 
+        <article class="project-card card reveal">
+          <div class="project-media">
+            <div style="font-weight:700">Project Two</div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">Interactive Dashboard</div>
+            <p class="project-desc">Real-time charts and performance-first UI for complex datasets and user controls.</p>
+          </div>
+        </article>
+
+        <article class="project-card card reveal">
+          <div class="project-media">
+            <div style="font-weight:700">Project Three</div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">Marketing Landing</div>
+            <p class="project-desc">A/B tested landing page with optimized animations for conversion and accessibility.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" style="margin-top:40px">
+      <h2>Skills & tools</h2>
+
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:12px">
+        <div class="tech">React</div>
+        <div class="tech">TypeScript</div>
+        <div class="tech">Tailwind</div>
+        <div class="tech">Figma</div>
+        <div class="tech">Node.js</div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="card">
+          <p style="color:var(--muted);margin-top:0">Interested in working together? Send a short message — I'll respond soon.</p>
+
+          <form onsubmit="handleSubmit(event)">
+            <label for="name">Name</label>
+            <input id="name" name="name" required />
+
+            <label for="email" style="margin-top:10px">Email</label>
+            <input id="email" name="email" type="email" required />
+
+            <label for="message" style="margin-top:10px">Message</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+
+            <div style="margin-top:12px;display:flex;gap:10px">
+              <button type="submit" class="btn primary">Send</button>
+              <button type="reset" class="btn">Reset</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="card">
+          <h4>Other ways to reach me</h4>
+          <p style="color:var(--muted)">Email — hello@example.com</p>
+          <p style="color:var(--muted)">Twitter — @yourhandle</p>
+          <p style="color:var(--muted)">&copy; 2025 Kisan Kesarwani</p>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      Built with care • Theme by <strong>Kisan</strong>
+    </footer>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
